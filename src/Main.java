@@ -19,6 +19,8 @@ public class Main {
             System.out.println("Your grade for "+ grade + " is D");
         }else if (grade >= 0 && grade < 60){
             System.out.println("Your grade for "+ grade + " is F");
+        }else {
+            System.out.println("Invalid input");
         }
 
 
