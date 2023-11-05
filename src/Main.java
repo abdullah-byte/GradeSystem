@@ -4,25 +4,36 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner =new Scanner(System.in);
 
-        System.out.println("Please enter your grade: ");
-        int grade = scanner.nextInt();
+        while (true) {
+        Scanner scanner = new Scanner(System.in);
+            System.out.println("Please enter your grade: ");
+            int score = scanner.nextInt();
+            scanner.nextLine();
+            char grade ='X';
 
-        if (grade >= 90 && grade <= 100){
-            System.out.println("Your grade for " + grade +" is A");
-        } else if (grade >= 80 && grade < 90) {
-            System.out.println("Your grade for "+ grade + " is B");
-        }else if (grade >= 70 && grade < 80){
-            System.out.println("Your grade for "+ grade + " is C");
-        }else if (grade >= 60 && grade < 70){
-            System.out.println("Your grade for "+ grade + " is D");
-        }else if (grade >= 0 && grade < 60){
-            System.out.println("Your grade for "+ grade + " is F");
-        }else {
-            System.out.println("Invalid input");
+            if (score <= 100) {
+                switch (score / 10) {
+                    case 10:
+                    case 9:
+                        grade = 'A';
+                        break;
+                    case 8:
+                        grade = 'B';
+                        break;
+                    case 7:
+                        grade = 'C';
+                        break;
+                    case 6:
+                        grade = 'D';
+                        break;
+
+                    default:
+                        grade = 'F';
+                        break;
+                }
+            }
+            System.out.println("Your grade for score " + score + " is " + grade );
         }
-
-
     }
 }
